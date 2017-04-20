@@ -19,7 +19,6 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:labelFor="@id/localeSp"
             android:text="@string/choose_locale" />
 
         <Spinner
@@ -54,7 +53,6 @@
             android:paddingLeft="8dp"
             android:paddingRight="8dp"
             android:paddingTop="16dp"
-            android:labelFor="@id/realmSp"
             android:text="@string/choose_realm" />
 
         <Spinner
@@ -76,7 +74,6 @@
             android:paddingLeft="8dp"
             android:paddingRight="8dp"
             android:paddingTop="16dp"
-            android:labelFor="@id/characterEt"
             android:text="@string/search_character" />
 
         <EditText

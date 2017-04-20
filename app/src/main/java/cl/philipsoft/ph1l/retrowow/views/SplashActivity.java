@@ -41,8 +41,8 @@ public class SplashActivity extends AppCompatActivity implements DataValidationC
 
     @Override
     public void racesLoaded() {
-races = 1;
-        if(races+classes+realms == 3){
+        races = 1;
+        if (races + classes + realms == 3) {
 
         }
     }
@@ -53,7 +53,10 @@ races = 1;
 
     @Override
     public void classesLoaded() {
+        classes = 1;
+        if (races + classes + realms == 3) {
 
+        }
     }
 
     @Override
@@ -63,7 +66,10 @@ races = 1;
 
     @Override
     public void realmLoaded() {
+        realms = 1;
+        if (races + classes + realms == 3) {
 
+        }
     }
 
     @Override
