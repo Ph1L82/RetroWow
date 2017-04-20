@@ -1,0 +1,33 @@
+<resources>
+    <string name="app_name">RetroWoW</string>
+
+    <string name="title_activity_splash" translatable="false">SplashActivity</string>
+    <string name="dummy_button" translatable="false">Dummy Button</string>
+    <string name="dummy_content" translatable="false">DUMMY\nCONTENT</string>
+    <string name="choose_realm">Selecciona el Reino</string>
+    <string name="search_character">Busca por nombre del personaje</string>
+    <string name="choose_character">Elije un personaje</string>
+    <string name="search">Buscar</string>
+    <string name="choose_locale">Seleccione idioma</string>
+
+    <string-array name="characters_array">
+        <item>Reivajal</item>
+        <item>Krävën</item>
+        <item>Gïmli</item>
+        <item>Philcorvinus</item>
+        <item>Grondrak</item>
+        <item>Weïchaffe</item>
+        <item>Shamydavisjr</item>
+        <item>Yòdä</item>
+        <item>Dragzby</item>
+        <item>Modrik</item>
+        <item>Vaerediir</item>
+    </string-array>
+
+    <string-array name="locale_array">
+        <item>en_US</item>
+        <item>pt_BR</item>
+        <item>es_MX</item>
+    </string-array>
+
+</resources>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">RetroWoW</string>
+    <string name="search">Search</string>
+    <string name="search_character">Search by Character Name</string>
+    <string name="choose_realm">Pick the Realm</string>
+    <string name="choose_character">Pick a character</string>
+    <string name="choose_locale">Pick locale</string>
+</resources>

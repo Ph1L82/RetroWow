@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">RetroWoW</string>
+    <string name="search">Buscar</string>
+    <string name="search_character">Busca por nombre del personaje</string>
+    <string name="choose_realm">Selecciona el Reino</string>
+    <string name="choose_character">Elije un personaje</string>
+    <string name="choose_locale">Seleccione idioma</string>
+</resources>
