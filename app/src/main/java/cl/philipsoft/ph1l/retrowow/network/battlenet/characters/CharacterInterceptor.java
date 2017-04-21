@@ -3,7 +3,6 @@ package cl.philipsoft.ph1l.retrowow.network.battlenet.characters;
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 
-import cl.philipsoft.ph1l.retrowow.models.Character;
 import cl.philipsoft.ph1l.retrowow.network.battlenet.Battlenet;
 import okhttp3.Interceptor;
 import okhttp3.OkHttpClient;
@@ -18,7 +17,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class CharacterInterceptor extends Battlenet {
 
-    public Character get() {
+    public Characters get() {
     /*This is very common in gets cause increase the response time wait and add headers and does retrys*/
         OkHttpClient.Builder httpClient = new OkHttpClient.Builder()
                 .connectTimeout(60, TimeUnit.SECONDS)
@@ -52,9 +51,9 @@ public class CharacterInterceptor extends Battlenet {
                 .client(client)
                 .build();
 
-        Character character = interceptor.create(Character.class);
+        Characters characters = interceptor.create(Characters.class);
 
-        return character;
+        return characters;
     }
 
 }

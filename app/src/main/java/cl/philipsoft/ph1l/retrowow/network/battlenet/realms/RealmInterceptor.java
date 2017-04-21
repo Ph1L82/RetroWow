@@ -3,7 +3,6 @@ package cl.philipsoft.ph1l.retrowow.network.battlenet.realms;
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 
-import cl.philipsoft.ph1l.retrowow.models.Realm;
 import cl.philipsoft.ph1l.retrowow.network.battlenet.Battlenet;
 import okhttp3.Interceptor;
 import okhttp3.OkHttpClient;
@@ -18,7 +17,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class RealmInterceptor extends Battlenet {
 
-    public Realm get() {
+    public Realms get() {
     /*This is very common in gets cause increase the response time wait and add headers and does retrys*/
         OkHttpClient.Builder httpClient = new OkHttpClient.Builder()
                 .connectTimeout(60, TimeUnit.SECONDS)
@@ -52,8 +51,8 @@ public class RealmInterceptor extends Battlenet {
                 .client(client)
                 .build();
 
-        Realm realm = interceptor.create(Realm.class);
+        Realms realms = interceptor.create(Realms.class);
 
-        return realm;
+        return realms;
     }
 }

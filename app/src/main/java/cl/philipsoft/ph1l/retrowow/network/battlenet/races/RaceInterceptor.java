@@ -3,8 +3,6 @@ package cl.philipsoft.ph1l.retrowow.network.battlenet.races;
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 
-import cl.philipsoft.ph1l.retrowow.models.Race;
-import cl.philipsoft.ph1l.retrowow.models.Realm;
 import cl.philipsoft.ph1l.retrowow.network.battlenet.Battlenet;
 import okhttp3.Interceptor;
 import okhttp3.OkHttpClient;
@@ -19,7 +17,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class RaceInterceptor extends Battlenet {
 
-    public Race get() {
+    public Races get() {
     /*This is very common in gets cause increase the response time wait and add headers and does retrys*/
         OkHttpClient.Builder httpClient = new OkHttpClient.Builder()
                 .connectTimeout(60, TimeUnit.SECONDS)
@@ -53,8 +51,8 @@ public class RaceInterceptor extends Battlenet {
                 .client(client)
                 .build();
 
-        Race race = interceptor.create(Race.class);
+        Races races = interceptor.create(Races.class);
 
-        return race;
+        return races;
     }
 }
