@@ -78,6 +78,6 @@ public class SplashActivity extends AppCompatActivity implements DataValidationC
 
     @Override
     public void loadRealms() {
-        RealmsService.startActionRealms(this );
+        RealmsService.startActionRealms(this);
     }
 }

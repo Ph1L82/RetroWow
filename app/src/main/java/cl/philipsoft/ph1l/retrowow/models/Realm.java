@@ -1,16 +1,12 @@
 package cl.philipsoft.ph1l.retrowow.models;
 
 public class Realm extends BaseSugar{
-    private String battlegroup;
+    private String battlegroup, timezone, name, type, locale, slug, population;
     private String[] connected_realms;
-    private String timezone;
-    private String name;
-    private String type;
-    private String locale;
-    private boolean queue;
-    private String slug;
-    private String population;
-    private boolean status;
+    private boolean queue, status;
+
+    public Realm() {
+    }
 
     public String getBattlegroup() {
         return this.battlegroup;

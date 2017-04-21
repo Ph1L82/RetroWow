@@ -5,20 +5,15 @@ import android.support.v4.media.session.MediaSessionCompat;
 import com.google.gson.annotations.SerializedName;
 
 public class Character extends BaseSugar{
-    private int totalHonorableKills;
-    private String battlegroup;
-    private String thumbnail;
-    private int race;
-    private int gender;
-    private int level;
-    private int achievementPoints;
+    private int totalHonorableKills, race, gender, level, achievementPoints, faction;
+    private String battlegroup, thumbnail, name, realm, calcClass;
     @SerializedName("class")
     private int clas;
-    private int faction;
-    private String name;
-    private String realm;
     private long lastModified;
-    private String calcClass;
+
+
+    public Character() {
+    }
 
     public int getTotalHonorableKills() {
         return this.totalHonorableKills;

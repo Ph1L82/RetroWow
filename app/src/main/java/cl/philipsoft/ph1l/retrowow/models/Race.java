@@ -3,11 +3,13 @@ package cl.philipsoft.ph1l.retrowow.models;
 import com.google.gson.annotations.SerializedName;
 
 public class Race extends BaseSugar{
-    private String side;
-    private String name;
+    private String side, name;
     @SerializedName("id")
     private int race_id;
     private int mask;
+
+    public Race() {
+    }
 
     public String getSide() {
         return this.side;

@@ -3,11 +3,14 @@ package cl.philipsoft.ph1l.retrowow.models;
 import com.google.gson.annotations.SerializedName;
 
 public class Class extends BaseSugar {
-    private String name;
+    private String name, powerType;
     @SerializedName("id")
     private int class_id;
     private int mask;
-    private String powerType;
+
+
+    public Class() {
+    }
 
     public String getName() {
         return this.name;
