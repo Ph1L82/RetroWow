@@ -7,6 +7,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
 import cl.philipsoft.ph1l.retrowow.R;
+import cl.philipsoft.ph1l.retrowow.background.ClassesService;
+import cl.philipsoft.ph1l.retrowow.background.RacesService;
+import cl.philipsoft.ph1l.retrowow.background.RealmsService;
 
 /**
  * An example full-screen activity that shows and hides the system UI (i.e.
@@ -48,7 +51,8 @@ public class SplashActivity extends AppCompatActivity implements DataValidationC
     }
 
     @Override
-    public void racesIncomplete() {
+    public void loadRaces() {
+        RacesService.startActionRaces(this);
     }
 
     @Override
@@ -60,12 +64,12 @@ public class SplashActivity extends AppCompatActivity implements DataValidationC
     }
 
     @Override
-    public void classesIncomplete() {
-
+    public void loadClasses() {
+        ClassesService.startActionClasses(this);
     }
 
     @Override
-    public void realmLoaded() {
+    public void realmsLoaded() {
         realms = 1;
         if (races + classes + realms == 3) {
 
@@ -73,7 +77,7 @@ public class SplashActivity extends AppCompatActivity implements DataValidationC
     }
 
     @Override
-    public void realmIncomplete() {
-
+    public void loadRealms() {
+        RealmsService.startActionRealms(this );
     }
 }

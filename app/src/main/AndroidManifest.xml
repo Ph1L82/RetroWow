@@ -34,9 +34,20 @@
             android:theme="@style/FullscreenTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <service
+            android:name=".background.RacesService"
+            android:exported="false" />
+        <service
+            android:name=".background.RealmsService"
+            android:exported="false" />
+        <service
+            android:name=".background.ClassesService"
+            android:exported="false"></service>
     </application>
 
 </manifest>

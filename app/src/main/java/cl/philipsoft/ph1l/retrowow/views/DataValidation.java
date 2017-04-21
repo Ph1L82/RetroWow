@@ -23,21 +23,21 @@ public class DataValidation {
         if (classes != null && classes.size() > 0) {
             callback.classesLoaded();
         } else {
-            callback.classesIncomplete();
+            callback.loadClasses();
         }
 
         List<Race> races = Race.listAll(Race.class);
         if (races != null && races.size() > 0) {
             callback.racesLoaded();
         } else {
-            callback.racesIncomplete();
+            callback.loadRaces();
         }
 
         List<Realm> realms = Realm.listAll(Realm.class);
         if (realms != null && realms.size() > 0) {
-            callback.realmLoaded();
+            callback.realmsLoaded();
         } else {
-            callback.realmIncomplete();
+            callback.loadRealms();
         }
     }
 }

@@ -7,10 +7,9 @@ package cl.philipsoft.ph1l.retrowow.views;
 public interface DataValidationCallback {
 
     void racesLoaded();
-    void racesIncomplete();
+    void loadRaces();
     void classesLoaded();
-    void classesIncomplete();
-    void realmLoaded();
-    void realmIncomplete();
-
+    void loadClasses();
+    void realmsLoaded();
+    void loadRealms();
 }
