@@ -23,7 +23,7 @@ public class BaseSugar extends SugarRecord {
         return super.save();
     }
 
-    private void create() {
+    public void create() {
         setRemote_id(getId());
         setId(null);
         super.save();
