@@ -36,7 +36,7 @@ public class GetRealms extends AsyncTask<String, Integer, Integer> {
                     code = 878470; //WTF in ascii/dec
                 }
             } else {
-                Log.d("REQUEST_CODE", "GETRACES CODE: " + String.valueOf(code));
+                Log.d("REQUEST_CODE", "GETREALMS CODE: " + String.valueOf(code));
             }
         } catch (IOException e) {
             e.printStackTrace();

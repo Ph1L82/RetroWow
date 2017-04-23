@@ -1,16 +1,23 @@
 package cl.philipsoft.ph1l.retrowow.views;
 
 import android.content.BroadcastReceiver;
+import android.content.Context;
+import android.content.Intent;
 import android.content.IntentFilter;
 import android.os.Bundle;
+import android.os.Handler;
+import android.support.v4.content.LocalBroadcastManager;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
+import cl.philipsoft.ph1l.retrowow.MainActivity;
 import cl.philipsoft.ph1l.retrowow.R;
 import cl.philipsoft.ph1l.retrowow.background.services.ClassesService;
 import cl.philipsoft.ph1l.retrowow.background.services.RacesService;
 import cl.philipsoft.ph1l.retrowow.background.services.RealmsService;
+
 import com.crashlytics.android.Crashlytics;
+
 import io.fabric.sdk.android.Fabric;
 
 /**
@@ -41,16 +48,59 @@ public class SplashActivity extends AppCompatActivity implements DataValidationC
         new DataValidation(this).init();
 
         intentFilter = new IntentFilter();
-        //intentFilter.addAction();
+        intentFilter.addAction(RealmsService.REALMS_FINISHED);
+        intentFilter.addAction(RacesService.RACES_FINISHED);
+        intentFilter.addAction(ClassesService.CLASSES_FINISHED);
 
+        broadcastReceiver = new BroadcastReceiver() {
+            @Override
+            public void onReceive(Context context, Intent intent) {
+                String action = intent.getAction();
+                if (RealmsService.REALMS_FINISHED.equals(action)) {
+                    realms = 1;
+                    checkDataLoaded();
+                }
+                if (RacesService.RACES_FINISHED.equals(action)) {
+                    races = 1;
+                    checkDataLoaded();
+                }
+                if (ClassesService.CLASSES_FINISHED.equals(action)) {
+                    classes = 1;
+                    checkDataLoaded();
+                }
+            }
+        };
+
+    }
+
+    @Override
+    protected void onPostResume() {
+        super.onPostResume();
+        LocalBroadcastManager.getInstance(this).registerReceiver(broadcastReceiver, intentFilter);
+    }
+
+    @Override
+    protected void onPause() {
+        LocalBroadcastManager.getInstance(this).unregisterReceiver(broadcastReceiver);
+        super.onPause();
+    }
+
+    private void checkDataLoaded() {
+        if (realms + races + classes == 3) {
+            new Handler().postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    startActivity(new Intent(SplashActivity.this, MainActivity.class));
+                }
+            }, 600);
+
+        }
     }
 
     @Override
     public void racesLoaded() {
         races = 1;
-        if (races + classes + realms == 3) {
-
-        }
+        checkDataLoaded();
     }
 
     @Override
@@ -61,9 +111,7 @@ public class SplashActivity extends AppCompatActivity implements DataValidationC
     @Override
     public void classesLoaded() {
         classes = 1;
-        if (races + classes + realms == 3) {
-
-        }
+        checkDataLoaded();
     }
 
     @Override
@@ -74,9 +122,7 @@ public class SplashActivity extends AppCompatActivity implements DataValidationC
     @Override
     public void realmsLoaded() {
         realms = 1;
-        if (races + classes + realms == 3) {
-
-        }
+        checkDataLoaded();
     }
 
     @Override

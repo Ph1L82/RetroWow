@@ -3,7 +3,7 @@ package cl.philipsoft.ph1l.retrowow.network.battlenet.characters;
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 
-import cl.philipsoft.ph1l.retrowow.network.battlenet.Battlenet;
+import cl.philipsoft.ph1l.retrowow.network.battlenet.BattleNet;
 import okhttp3.Interceptor;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
@@ -15,7 +15,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
  * Created by phil_ on 19-04-2017.
  */
 
-public class CharacterInterceptor extends Battlenet {
+public class CharacterInterceptor extends BattleNet {
 
     public Characters get() {
     /*This is very common in gets cause increase the response time wait and add headers and does retrys*/
