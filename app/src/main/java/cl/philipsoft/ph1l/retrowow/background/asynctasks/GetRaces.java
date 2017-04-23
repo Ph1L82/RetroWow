@@ -1,4 +1,4 @@
-package cl.philipsoft.ph1l.retrowow.background;
+package cl.philipsoft.ph1l.retrowow.background.asynctasks;
 
 import android.os.AsyncTask;
 import android.util.Log;
@@ -12,8 +12,6 @@ import cl.philipsoft.ph1l.retrowow.network.battlenet.races.RaceInterceptor;
 import cl.philipsoft.ph1l.retrowow.network.battlenet.races.Races;
 import retrofit2.Call;
 import retrofit2.Response;
-
-import static android.content.ContentValues.TAG;
 
 /**
  * Created by phil_ on 19-04-2017.
@@ -38,7 +36,7 @@ public class GetRaces extends AsyncTask<String, Integer, Integer> {
                     code = 878470; //WTF in ascii/dec
                 }
             } else {
-                Log.d("REQUEST_CODE", String.valueOf(code));
+                Log.d("REQUEST_CODE", "GETRACES CODE: " + String.valueOf(code));
             }
 
         } catch (IOException e) {

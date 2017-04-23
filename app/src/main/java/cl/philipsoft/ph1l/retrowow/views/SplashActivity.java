@@ -7,9 +7,11 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
 import cl.philipsoft.ph1l.retrowow.R;
-import cl.philipsoft.ph1l.retrowow.background.ClassesService;
-import cl.philipsoft.ph1l.retrowow.background.RacesService;
-import cl.philipsoft.ph1l.retrowow.background.RealmsService;
+import cl.philipsoft.ph1l.retrowow.background.services.ClassesService;
+import cl.philipsoft.ph1l.retrowow.background.services.RacesService;
+import cl.philipsoft.ph1l.retrowow.background.services.RealmsService;
+import com.crashlytics.android.Crashlytics;
+import io.fabric.sdk.android.Fabric;
 
 /**
  * An example full-screen activity that shows and hides the system UI (i.e.
@@ -24,6 +26,7 @@ public class SplashActivity extends AppCompatActivity implements DataValidationC
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        Fabric.with(this, new Crashlytics());
         setContentView(R.layout.activity_splash);
 
         View view = findViewById(R.id.splash);

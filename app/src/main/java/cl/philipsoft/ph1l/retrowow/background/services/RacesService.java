@@ -1,4 +1,4 @@
-package cl.philipsoft.ph1l.retrowow.background;
+package cl.philipsoft.ph1l.retrowow.background.services;
 
 import android.app.IntentService;
 import android.content.Intent;

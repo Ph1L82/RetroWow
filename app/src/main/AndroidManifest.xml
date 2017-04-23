@@ -40,14 +40,17 @@
         </activity>
 
         <service
-            android:name=".background.RacesService"
+            android:name=".background.services.RacesService"
             android:exported="false" />
         <service
-            android:name=".background.RealmsService"
+            android:name=".background.services.RealmsService"
             android:exported="false" />
         <service
-            android:name=".background.ClassesService"
+            android:name=".background.services.ClassesService"
             android:exported="false"></service>
+        <meta-data
+            android:name="io.fabric.ApiKey"
+            android:value="444cc818f4a7ad94c547c706d2bbe39e7c89c2ad" />
     </application>
 
 </manifest>
