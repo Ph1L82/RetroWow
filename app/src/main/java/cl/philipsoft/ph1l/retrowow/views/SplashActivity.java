@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.support.v4.content.LocalBroadcastManager;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 
 import cl.philipsoft.ph1l.retrowow.MainActivity;
@@ -86,6 +87,7 @@ public class SplashActivity extends AppCompatActivity implements DataValidationC
     }
 
     private void checkDataLoaded() {
+        logdData();
         if (realms + races + classes == 3) {
             new Handler().postDelayed(new Runnable() {
                 @Override
@@ -93,9 +95,17 @@ public class SplashActivity extends AppCompatActivity implements DataValidationC
                     startActivity(new Intent(SplashActivity.this, MainActivity.class));
                 }
             }, 600);
-
         }
     }
+
+    private void logdData() {
+        Log.d("DATALOG",
+                " Realms: " + realms
+                        + " Races: " + races
+                        + " Classes: " + classes
+        );
+    }
+
 
     @Override
     public void racesLoaded() {

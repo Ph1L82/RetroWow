@@ -24,6 +24,8 @@ public class GetRealms extends AsyncTask<String, Integer, Integer> {
 
     @Override
     protected Integer doInBackground(String... params) {
+
+        Log.d("GETREALMS", " params[0]:" + params[0] + " params[1]:" + params[1]);
         Call<Realm[]> call = request.get(params[0], params[1]);
         try {
             Response<Realm[]> response = call.execute();
@@ -44,4 +46,5 @@ public class GetRealms extends AsyncTask<String, Integer, Integer> {
         }
         return null;
     }
+
 }

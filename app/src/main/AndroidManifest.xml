@@ -47,10 +47,16 @@
             android:exported="false" />
         <service
             android:name=".background.services.ClassesService"
-            android:exported="false"></service>
+            android:exported="false" />
+
         <meta-data
             android:name="io.fabric.ApiKey"
             android:value="444cc818f4a7ad94c547c706d2bbe39e7c89c2ad" />
+
+        <activity
+            android:name=".views.CharacterActivity"
+            android:label="@string/title_activity_character"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>

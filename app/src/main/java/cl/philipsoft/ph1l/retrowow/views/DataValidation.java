@@ -1,5 +1,7 @@
 package cl.philipsoft.ph1l.retrowow.views;
 
+import android.util.Log;
+
 import java.util.List;
 
 import cl.philipsoft.ph1l.retrowow.models.Class;
@@ -19,25 +21,29 @@ public class DataValidation {
     }
 
     public void init() {
-        List<Class> classes = Class.listAll(Class.class);
-        if (classes != null && classes.size() > 0) {
-            callback.classesLoaded();
+        List<Realm> realms = Realm.listAll(Realm.class);
+        if (realms != null && realms.size() > 0) {
+            callback.realmsLoaded();
+            Log.d("DVREALMS", "REALMS SIZE: " + String.valueOf(realms.size()));
         } else {
-            callback.loadClasses();
+            callback.loadRealms();
         }
+
 
         List<Race> races = Race.listAll(Race.class);
         if (races != null && races.size() > 0) {
             callback.racesLoaded();
+            Log.d("DVRACES", "RACES SIZE: " + String.valueOf(races.size()));
         } else {
             callback.loadRaces();
         }
 
-        List<Realm> realms = Realm.listAll(Realm.class);
-        if (realms != null && realms.size() > 0) {
-            callback.realmsLoaded();
+        List<Class> classes = Class.listAll(Class.class);
+        if (classes != null && classes.size() > 0) {
+            callback.classesLoaded();
+            Log.d("DVCLASSES", "CLASSES SIZE: " + String.valueOf(classes.size()));
         } else {
-            callback.loadRealms();
+            callback.loadClasses();
         }
     }
 }

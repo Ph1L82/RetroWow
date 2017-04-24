@@ -24,6 +24,7 @@ public class GetClasses extends AsyncTask<String, Integer, Integer> {
 
     @Override
     protected Integer doInBackground(String... params) {
+        Log.d("GETCLASSES", " params[0]:" + params[0] + " params[1]:" + params[1]);
         Call<Class[]> call = request.get(params[0], params[1]);
         try {
             Response<Class[]> response = call.execute();

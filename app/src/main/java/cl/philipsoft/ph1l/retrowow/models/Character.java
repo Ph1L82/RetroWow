@@ -1,7 +1,5 @@
 package cl.philipsoft.ph1l.retrowow.models;
 
-import android.support.v4.media.session.MediaSessionCompat;
-
 import com.google.gson.annotations.SerializedName;
 
 public class Character extends BaseSugar{

@@ -11,19 +11,9 @@ import retrofit2.http.Query;
 
 public interface Classes {
 
-    /**
-     *
-     * https://us.api.battle.net/wow/data/character/classes?locale=en_US&apikey=gfnfh2y3gf6erht6pzttjwvay9ybjhjh
-     * BASE_URL+wow/data/character/classes?locale=en_US&apikey=gfnfh2y3gf6erht6pzttjwvay9ybjhjh
-     *
-     * @param locale
-     * @param apikey
-     * @return
-     */
-
     @GET("wow/data/character/classes")
     Call<Class[]> get(
             @Query("locale") String locale,
-            @Query("apikey") String apikey
+            @Query("apikey") String APIKEY
     );
 }
