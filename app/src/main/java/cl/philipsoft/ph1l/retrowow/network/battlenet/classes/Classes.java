@@ -11,7 +11,7 @@ import retrofit2.http.Query;
 
 public interface Classes {
 
-    @GET("wow/data/character/classes")
+    @GET("data/character/classes")
     Call<Class[]> get(
             @Query("locale") String locale,
             @Query("apikey") String APIKEY

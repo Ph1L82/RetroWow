@@ -11,7 +11,7 @@ import retrofit2.http.Query;
 
 public interface Realms {
 
-    @GET("wow/realm/status")
+    @GET("realm/status")
     Call<Realm[]> get(
             @Query("locale") String locale,
             @Query("apikey") String APIKEY

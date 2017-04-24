@@ -11,7 +11,7 @@ import retrofit2.http.Query;
 
 public interface Races {
 
-    @GET("wow/data/character/races")
+    @GET("data/character/races")
     Call<Race[]> get(
             @Query("locale") String locale,
             @Query("apikey") String APIKEY
